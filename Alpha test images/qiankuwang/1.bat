@@ -1,0 +1,1 @@
+dir *.alf /s /on > curr_png.txt
