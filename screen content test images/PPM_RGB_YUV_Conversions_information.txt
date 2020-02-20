@@ -1,0 +1,12 @@
+The PPM version of the test images was downloaded from the link: http://www1.hft-leipzig.de/strutz/Papers/SCFenhanced-resources/
+
+The RGB version of the test images was created by extracting raw RGB data from the PPM version and saving them in bitdepth of 8. 
+
+The YUV version of the test images was made by converting the RGB data to ITU-R Rec. BT. 709 YCbCr 8-bit format through the following calculations:
+
+t = 0.2126*R + 0.7152*G + 0.0722*B;
+Y = floor(16 + 219 * t / 255 + 0.5);
+Cb = floor(128 + 112 * (B - t) / (255 * (1 - 0.0722)) + 0.5);
+Cr = floor(128 + 112 * (R - t) / (255 * (1 - 0.2126)) + 0.5);
+
+where t is a floating-point variable; R, G, B, Y, Cb, and Cr are integers, floor(x) is the largest integer of x, and single-precision floating-point processing was used in all calculations.
